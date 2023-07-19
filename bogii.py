@@ -15,34 +15,34 @@ import numpy as np
 
 # The string defined blow, should be 16 characters in length, representing four
 # rows of four characters per row characteristic of a typical Boggle board.
-ltrlist = "ptnplyrahlettotd"
+ltrlist = "istnurgedaarnpwh"
 
 # Below, find a dictionary defining the assigned Boggle values associated with the dice
 # in a standard games of Boggle
 score_dict = {
-'a': 1,
+'a': 2,
 'b': 2,
 'c': 3,
-'d': 2,
+'d': 3,
 'e': 1,
 'f': 4,
-'g': 2,
+'g': 4,
 'h': 4,
-'i': 1,
+'i': 2,
 'j': 0,
 'k': 0,
 'l': 2,
 'm': 3,
-'n': 1,
+'n': 2,
 'o': 1,
-'p': 3,
+'p': 4,
 'q': 0,
-'r': 1,
+'r': 2,
 's': 1,
-'t': 1,
-'u': 1,
+'t': 2,
+'u': 4,
 'v': 0,
-'w': 0,
+'w': 6,
 'x': 0,
 'y': 4,
 'z': 10
@@ -347,9 +347,9 @@ class MindBoggle():
         global score_dict
         final_string = ""
         final_score = 0
-        chn=""
 
-
+        # This is the general area that calculates the score of the word, given the
+        # the letter scores in our score_dict
         for e in chainStr:
             ltr = int(e, base=16)
             final_string = final_string + grid[ltr]
