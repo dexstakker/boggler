@@ -1,3 +1,6 @@
+# Boggler
+# Written by Jason Graham
+# Copyright March 28, 2020
 
 import time
 import twl
@@ -55,8 +58,6 @@ chainDone = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
 chainOrder = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
 
 results = {}
-
-to_delete = []
 
 wordcounter = 0
 
@@ -179,14 +180,14 @@ class MindBoggle():
         if not hasattr(self, 'firstPass') or self.firstPass == 0:
             self.firstPass = 1
         else:
-            curr=0
+            curr = 0
             r = self.hiPriList.get(curr)
             sword = r.split(",",2)
             keyFieldNum = 1
             #if self.toggleSort:
                 #keyFieldNum = 3
             newSelWord = sword[keyFieldNum]
-            newEncodedWord = sword[keyFieldNum+1]
+            #newEncodedWord = sword[keyFieldNum+1]
             self.vrbno = self.getVerbNoun(newSelWord)
             for v in self.vrbno:
                 self.makeAlternalist(v)
@@ -291,8 +292,6 @@ class MindBoggle():
             final_word = ltr
             chainDone[ipos] = 1
             self.findNextLetter(final_word, chainDone)
-            #for w in to_delete:
-            #    results.pop(w)
             chainDone[ipos] = 0
 
         self.fillListboxes()
@@ -346,7 +345,6 @@ class MindBoggle():
         global results
         global grid
         global score_dict
-        global to_delete
         final_string = ""
         final_score = 0
         chn=""
