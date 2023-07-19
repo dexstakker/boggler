@@ -51,8 +51,15 @@ score_dict = {
 global_choices = {}
 grid = {}
 
-# "chain", the list below defined (with the 4x4 row board being defined from top left to bottom right counting
-# from 0 to 15 (HEX 'F')
+# The index of this list is the 0-F code of the square on the Boggle board, and the resulting payload
+# of that list entry is a string of all of the reachable next squares from the index key
+# The board looks like this (so the value "145" contains all the possible hope from key value 0:
+#
+#       0 1 2 3
+#       4 5 6 7
+#       8 9 A B
+#       C D E F
+#
 chain = ["145","04562","13567","267","01589","0124689A", "123579AB","236AB","459CD","4568ACDE","5679B","67AEF","89D","89ACE","9ABDF","ABE"]
 chainDone = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
 chainOrder = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
