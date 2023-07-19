@@ -377,8 +377,9 @@ class MindBoggle():
                 if final_len >= 3:
                     self.hiList.insert(self.hiPriIndex,present_str)
                     slist = present_str.split(",")
-                    if self.justBeginning and len(slist[1]) <= 4:
-                       print (slist[1])
+                    # if self.justBeginning and len(slist[1]) <= 4:
+                    #    print (slist[1])
+                    print(".", end="")
 
                     self.listOfWords[final_string] = present_str
                     self.hiPriIndex = self.hiPriIndex +1
