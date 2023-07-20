@@ -345,7 +345,10 @@ class MindBoggle():
             if chainDone[idx] == 1:
                 continue
 
-            if len(chainStr) <= 8:
+            # Changing maxLengthToCheck can make an appreciable differerence to run time.
+            # A length of 8 has typically been the sweet spot.
+            maxLengthToCheck = 10
+            if len(chainStr) <= maxLengthToCheck:
                 chainDone[idx] = 1
                 chainStr += nextdigit
                 #print("ADD Lead: " + str(nextdigit))
