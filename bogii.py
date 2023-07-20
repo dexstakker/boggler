@@ -71,7 +71,7 @@ wordcounter = 0
 class MindBoggle():
     def __init__(self, master):
         self.master = master
-        master.title("A simple GUI")
+        master.title("Boggler")
 
         self.toggleSort = True
 
@@ -267,6 +267,19 @@ class MindBoggle():
         global grid, ltrlist
         grid = list (ltrlist)
         print("Letter List = " + str(grid))
+        for i in range(0, 4):
+            print(ltrlist[i], ' ', end='')
+        print()
+        for i in range(4, 8):
+            print(ltrlist[i], ' ', end='')
+        print()
+        for i in range(8, 12):
+            print(ltrlist[i], ' ', end='')
+        print()
+        for i in range(12, 16):
+            print(ltrlist[i], ' ', end='')
+        print()
+
 
     def print_word_directions(self):
         print("print_word_directions()")
