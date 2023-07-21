@@ -339,15 +339,16 @@ class MindBoggle():
         lastLetterofNumber = int(chainStr[-1], base=16)
         possibles = chain[(int(lastLetterofNumber))]
         for nextdigit in possibles:
-
+            # Make an int of the next move square number
             idx = int(nextdigit,16)
 
+             
             if chainDone[idx] == 1:
                 continue
 
-            # Changing maxLengthToCheck can make an appreciable differerence to run time.
+            # Changing maxLengthToCheck can make an appreciable difference in the run time.
             # A length of 8 has typically been the sweet spot.
-            maxLengthToCheck = 10
+            maxLengthToCheck = 8
             if len(chainStr) <= maxLengthToCheck:
                 chainDone[idx] = 1
                 chainStr += nextdigit
@@ -433,10 +434,10 @@ class MindBoggle():
             self.hiPriList.insert(self.hiPriIndex, contentItem)
             self.hiPriIndex += 1
 
+
 # MAIN FUNCTION
 if __name__ == '__main__':
     root = tk.Tk()
     root.geometry("700x800")
     mb = MindBoggle(root)
     root.mainloop()
-
